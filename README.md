@@ -1,5 +1,10 @@
 # INF264 - Prosjekt 2 - Kib019
 
+## Summary
+
+This project aims to develop an advanced automatic recognition method for handwritten hexadecimal digits, as part of the Santa's Workshop mission. The task involves correctly identifying a wide range of digits and also detecting empty labels on gifts. The project results indicate that machine learning methods are appropriate for the task as they achieve high accuracy in recognition. The expectation is that the developed classifier will enhance the efficiency of the gift production process and contribute to a successful execution of Christmas preparations. For moe detail, read "AboutProject"-file!
+
+
 ##Setup and Requirements
  
 1. This project uses Python 3.11.

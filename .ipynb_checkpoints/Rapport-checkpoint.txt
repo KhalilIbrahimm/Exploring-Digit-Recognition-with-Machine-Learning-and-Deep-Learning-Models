@@ -1,0 +1,17 @@
+
+## GridSearchCV og Valg av Metode:
+
+Jeg utforsket først manuell hyperparameteroptimalisering for modellene mine. Dette innebar å eksperimentere med ulike hyperparameterverdier for hver modell og evaluere ytelsen manuelt. Mens denne tilnærmingen ga meg en verdifull forståelse av hvordan hyperparametre påvirker modellenes ytelse, oppdaget jeg raskt at den hadde betydelige begrensninger. Det manuelle søket var tidkrevende, spesielt med et stort datasett, og begrenset i omfang, da jeg ikke kunne utforske alle mulige hyperparameterkombinasjoner.
+
+For å forbedre denne prosessen og oppnå mer systematiske og omfattende resultater, valgte jeg å implementere GridSearchCV fra Scikit-learn-biblioteket. GridSearchCV er en kraftig teknikk for hyperparameteroptimalisering, Det tester alle mulige kombinasjoner av hyperparametere som er spesifisert på forhånd.GridSearchCV tester alle mulige kombinasjoner av hyperparametere som er forhåndsdefinert. For eksempel, hvis du har to hyperparametere, vil det teste alle kombinasjoner av verdier for begge parametrene. Dette sikrer en systematisk utforskning av hyperparameterrommet. Og for hver hyperparameterkombinasjon utfører GridSearchCV kryssvalidering. Dette betyr at det deler treningsdataene i mindre deler (kalt bretter), trener modellen på noen bretter og evaluerer ytelsen på andre. Dette gjentas flere ganger for å sikre en pålitelig ytelsesmåling. Til slutt og etter å ha søkt gjennom alle kombinasjoner og utført kryssvalidering, identifiserer GridSearchCV den kombinasjonen av hyperparametere som gir den beste ytelsen i henhold til den valgte målemetrikken.
+
+
+# Begrunnelse for modellutvalg etter crossvalidering basert på prediksjonstid med nøyaktighet som sekundær prioritering:
+
+I utviklingen av det automatiserte gavegjenkjennelsessystemet har jeg valgt å prioritere modellutvalg basert på prediksjonstid som hovedevalueringsmetrikk. Dette valget er forankret i prosjektets spesifikke krav og formålet med systemet. Julegavene skal sorteres og leveres på kort tid, og effektivitet er derfor av avgjørende betydning for å oppfylle Julenissens tidsrammer og sørge for en jevn julegaveproduksjon.
+
+Selv om nøyaktighet er viktig for å unngå feil i gaveidentifikasjon, anser jeg det som en sekundær prioritet i denne sammenhengen. Dette skyldes at selv med høy nøyaktighet i gaveidentifikasjon, hvis prosessen tar for lang tid, kan det oppstå forsinkelser i leveringen som kan påvirke juleopplevelsen negativt. Derfor har jeg satt hovedmålet mitt for å prioritere prediksjonstid for å sikre at gaveidentifikasjon og sortering gjennomføres så raskt som mulig.
+
+SVC-modellen oppnådde den høyeste nøyaktigheten på 93% med en prediksjonstid på 80 sekunder, mens MLPClassifier hadde en nøyaktighet på cirka 90.4% med en prediksjonstid på 0.31 sekunder. Den betydelige forskjellen i prediksjonstid gjør MLPClassifier til den beste modellen, da den oppnår en høy nøyaktighet samtidig som den opprettholder en betydelig raskere behandlingstid, noe som er avgjørende for å sikre en effektiv julegaveproduksjon og levering.
+
+
